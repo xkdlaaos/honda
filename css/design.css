@@ -16,7 +16,8 @@ body {
     margin:0 auto;
 }
 #header {
-    height:380px;
+    height:379px;
+    overflow:hidden;
 }
 #header .cf_video {
     width:74.41860465116279%;
@@ -34,13 +35,62 @@ body {
     width:50%;
     float:left;
 }
+#list li figure:nth-of-type(1) {
+    height:124px;
+}
 #list li p {
-    line-height:125px;
+    line-height:100px;
     text-align: center;
+}
+#list::after { /* float를 해제하는 clearfix 기법, 일종의 hack */
+    content:'';
+    display:block;
+    clear:both;
+}
+.aside + h2 {
+    text-align:center;
+    font-size:20px;
+    padding:20px 0;
 }
 
 /* 카카오 지도 */
 #map {
     width:860px; /* 우리의 레이아웃 크기 : 860px 기준 */
-    height:640px;
+    height:300px;
+}
+.traffic {
+    list-style:none;
+}
+.traffic li {
+    line-height:92px;
+    padding-left:120px;
+    margin:20px 0;
+    font-size:1.125rem;
+}
+.traffic li:nth-child(1) {
+    background-image:url("../images/group1.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.traffic li:nth-child(2) {
+    background-image:url("../images/group2.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.traffic li:nth-child(3) {
+    background-image:url("../images/group3.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    line-height:1;
+    min-height:92px;
+    box-sizing:border-box; /* 높이나 넓이에 여백을 포함시키는 방법 */
+    padding-top:15px;
+}
+.footer_logo {
+    float:left;
+}
+.copy_info {
+    float:right;
+    text-transform:uppercase;
+    line-height:95px;
 }
